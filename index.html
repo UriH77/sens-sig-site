@@ -5,82 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sens-Sig | Strategic Tech Partnerships</title>
     <style>
-        /* הגדרות כלליות */
-        * { box-sizing: border-box; }
-
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
-            height: 100vh;
-            width: 100vw;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 0 5%;
-            /* רקע - וודא ששם התמונה מדויק */
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            /* תמונת רקע בצבע המקורי */
             background: url('final.jpg') no-repeat center center fixed;
             background-size: cover;
-            overflow: hidden;
         }
-
-        /* הגדרת התיבות - כאן הבטחנו שהן יהיו גלויות */
-        .side-box, .center-box {
-            position: relative; /* מבטיח שהן מעל הרקע */
-            z-index: 10;
-            background: rgba(255, 255, 255, 0.92); /* לבן כמעט מלא לקריאות מקסימלית */
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-            backdrop-filter: blur(10px); /* אפקט זכוכית יוקרתי */
+        .container {
+            /* צבע כחלחל עדין ב-10% אטימות */
+            background: rgba(220, 235, 250, 0.1);
+            /* הוספת טשטוש רקע קל כדי שהטקסט יהיה קריא גם על צבע שקוף */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 550px;
+            width: 90%;
         }
-
-        .side-box { width: 230px; text-align: center; }
-        .center-box { width: 400px; text-align: center; border: 3px solid #1a365d; }
-
-        h1 { color: #1a365d; font-size: 3em; margin: 0 0 10px 0; letter-spacing: -1px; }
-        h3 { color: #2b6cb0; font-size: 1.3em; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; }
-
-        .item { display: block; margin: 15px 0; font-weight: 700; color: #2d3748; font-size: 1.05em; }
-
-        .contact-btn {
-            display: inline-block;
-            background: #2b6cb0;
-            color: white;
-            text-decoration: none;
-            padding: 14px 28px;
+        h1 { color: #1a365d; margin-bottom: 5px; font-size: 2.8em; letter-spacing: -1px; }
+        .tagline { color: #2d3748; font-size: 1.1em; font-weight: 600; margin-bottom: 30px; line-height: 1.6; }
+        .expertise {
+            border-top: 1px solid rgba(26, 54, 93, 0.2);
+            border-bottom: 1px solid rgba(26, 54, 93, 0.2);
+            padding: 25px 0;
+            margin-bottom: 35px;
+            background-color: rgba(255, 255, 255, 0.3);
             border-radius: 8px;
-            font-weight: bold;
-            margin-top: 25px;
-            transition: 0.3s ease;
         }
+        .expertise-item { display: block; margin: 10px 0; font-weight: 700; color: #2b6cb0; font-size: 1.05em; }
+        .contact-btn { background: #2b6cb0; color: white; text-decoration: none; padding: 15px 35px; border-radius: 8px; font-weight: bold; transition: all 0.3s ease; display: inline-block; }
         .contact-btn:hover { background: #1a365d; transform: scale(1.05); }
-
-        .personal-note { font-style: italic; color: #4a5568; margin-top: 20px; font-size: 1em; font-weight: 500; }
+        .personal-note { margin-top: 25px; font-style: italic; color: #1a365d; font-size: 1em; font-weight: 600; }
+        footer { margin-top: 50px; font-size: 0.8em; color: #4a5568; text-transform: uppercase; letter-spacing: 1px; }
     </style>
 </head>
 <body>
-
-    <div class="side-box">
-        <h3>Expertise</h3>
-        <span class="item">WiFi Sensing</span>
-        <span class="item">AI Analytics</span>
-        <span class="item">VMS Integration</span>
-    </div>
-
-    <div class="center-box">
+    <div class="container">
         <h1>Sens-Sig</h1>
-        <p style="font-weight: 600; color: #2d3748; font-size: 1.1em;">
-            Strategic Tech Partnerships<br>Market Entry Specialist
-        </p>
-        <div class="personal-note">Led by Uri Hemo</div>
-    </div>
+        <div class="tagline">Strategic Tech Partnerships & Market Entry <br>Connecting Innovation to Israel's Tier-1 Carriers</div>
 
-    <div class="side-box">
-        <h3>Network</h3>
-        <span class="item">Telecom Specialist</span>
-        <span class="item">Israeli Carriers</span>
-        <a href="mailto:uri.hemo@sens-sig.com" class="contact-btn">Contact Uri</a>
-    </div>
+        <div class="expertise">
+            <span class="expertise-item">WiFi Sensing & AI Analytics</span>
+            <span class="expertise-item">VMS & Enterprise Security Systems</span>
+            <span class="expertise-item">Telecom Business Development Specialist</span>
+        </div>
 
+        <div class="personal-note">Led by Uri Hemo, Subject Matter Expert</div>
+        <br><br>
+        <a href="mailto:uri.hemo@sens-sig.com" class="contact-btn">Get in Touch</a>
+
+        <footer>
+            &copy; 2026 Sens-Sig Strategic Ventures | Israel
+        </footer>
+    </div>
 </body>
 </html>
