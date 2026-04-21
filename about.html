@@ -6,30 +6,30 @@
     <title>About | Sens-Sig</title>
     <style>
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            min-height: 100vh; /* מאפשר גלילה אם הטקסט ארוך מהמסך בלפטופ */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            background: url('final.jpg') no-repeat center center fixed;
-            background-size: cover;
-            text-align: center;
-        }
-        .container {
-            background: rgba(10, 25, 47, 0.6); /* הגוון הכחול הכהה שקבענו */
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 700px;
-            width: 100%; /* מתאים את עצמו לרוחב המסך של הלפטופ */
-            margin: auto;
-            color: white;
-        }
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh; /* מאפשר לדף להיות ארוך יותר מהמסך */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px; /* רווח למעלה ולמטה כדי שהכפתור לא יידבק לקצה */
+    background: url('final.jpg') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+}
+
+.container {
+    background: rgba(10, 25, 47, 0.7); /* כהה יותר לקריאות */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 30px; /* צמצמנו ריווח כדי לחסוך מקום */
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 650px;
+    width: 90%;
+    color: white;
+}
         h1 { color: #ffffff; margin-top: 0; margin-bottom: 20px; font-size: 2.2em; text-align: center; text-shadow: 2px 2px 4px rgba(0,0,0,3); } 
         p {
             line-height: 1.8;
@@ -38,7 +38,20 @@
             color: #e2e8f0;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
-        .back-btn:hover { background: rgba(147, 197, 253, 0.2); }
+      <!--  .back-btn:hover { background: rgba(147, 197, 253, 0.2); }  -->
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    color: #93c5fd;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #93c5fd;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+       
     </style>
 </head>
 <body>
