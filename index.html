@@ -6,64 +6,26 @@
     <title>Sens-Sig | Strategic Tech Partnerships</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
+            height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-            /* הגדרת תמונת רקע */
+            justify-content: space-between;
+            padding: 0 5%;
+            /* תמונת רקע בצבע המקורי שלה */
             background-image: url('final.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed;
+            overflow: hidden;
         }
-        /* שכבת כיסוי כדי שהטקסט יהיה קריא על רקע התמונה */
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.7); /* שינוי ה-0.7 לערך נמוך יותר יהפוך את הרקע לכהה/בהיר יותר */
-            z-index: -1;
+
+        /* התיבות בצדדים ובמרכז עם רקע לבן שקוף כדי שהטקסט יבלוט */
+        .side-box, .center-box {
+            background: rgba(255, 255, 255, 0.85); /* לבן עם 85% אטימות */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            backdrop-filter: blur(5px); /* מוסיף אפקט טשטוש קל מאחורי התיבה - נראה מאוד הייטקי */
         }
-        .container {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 50px;
-            border-radius: 16px;
-            box-shadow: 0 20px 25px rgba(0,0,0,0.1);
-            max-width: 550px;
-            width: 90%;
-            position: relative;
-        }
-        h1 { color: #1a365d; margin-bottom: 5px; font-size: 2.8em; letter-spacing: -1px; }
-        .tagline { color: #4a5568; font-size: 1.1em; font-weight: 400; margin-bottom: 30px; line-height: 1.6; }
-        .expertise { border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; padding: 25px 0; margin-bottom: 35px; background-color: #f8fafc; border-radius: 8px; }
-        .expertise-item { display: block; margin: 10px 0; font-weight: 600; color: #2b6cb0; font-size: 1.05em; }
-        .contact-btn { background: #2b6cb0; color: white; text-decoration: none; padding: 15px 35px; border-radius: 8px; font-weight: bold; transition: all 0.3s ease; display: inline-block; }
-        .personal-note { margin-top: 25px; font-style: italic; color: #718096; font-size: 0.95em; }
-        footer { margin-top: 50px; font-size: 0.8em; color: #a0aec0; text-transform: uppercase; letter-spacing: 1px; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Sens-Sig</h1>
-        <div class="tagline">Strategic Tech Partnerships & Market Entry <br>Connecting Innovation to Israel's Tier-1 Carriers</div>
-
-        <div class="expertise">
-            <span class="expertise-item">WiFi Sensing & AI Analytics</span>
-            <span class="expertise-item">VMS & Enterprise Security Systems</span>
-            <span class="expertise-item">Telecom Business Development Specialist</span>
-        </div>
-
-        <div class="personal-note">Led by Uri Hemo, Subject Matter Expert</div>
-        <br><br>
-        <a href="mailto:uri.hemo@sens-sig.com" class="contact-btn">Get in Touch</a>
-
-        <footer>
-            &copy; 2026 Sens-Sig Strategic Ventures | Israel
-        </footer>
-    </div>
-</body>
-</html>
