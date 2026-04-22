@@ -1,94 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sens-Sig | Strategic Tech Partnerships</title>
+    <title>SENS-SIG | Telecom Business Development</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            min-height: 100vh; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-            background: url('final.jpg') no-repeat center center fixed;
-            background-size: cover;
+        :root {
+            --primary-blue: #0055ff;
+            --executive-navy: #0f172a;
+            --text-main: #ffffff;
+            --text-gray: #e2e8f0;
+            --transition: all 0.5s cubic-bezier(0.15, 1, 0.3, 1);
         }
-        .container {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 550px;
-            width: 90%; 
-            margin: auto;
-            text-align: center;
-        }
-        h1 { color: #1a365d; margin-bottom: 5px; font-size: 2.8em; letter-spacing: -1px; }
-        .tagline { color: #94a3b8; font-size: 1.4em; font-weight: 600; margin-bottom: 30px; line-height: 1.6; }
-        .expertise {
-            border-top: 1px solid rgba(26, 54, 93, 0.2);
-            border-bottom: 1px solid rgba(26, 54, 93, 0.2);
-            padding: 25px 0;
-            margin-bottom: 35px;
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
-        }
-        .expertise-item { display: block; margin: 10px 0; font-weight: 700; color: #1e293b; font-size: 1.05em; }
-        .contact-btn { background: #2b6cb0; color: white; text-decoration: none; padding: 15px 35px; border-radius: 8px; font-weight: bold; transition: all 0.3s ease; display: inline-block; }
-        .contact-btn:hover { background: #1a365d; transform: scale(1.05); }
-        .personal-note { margin-top: 25px; font-style: italic; color: #1a365d; font-size: 1em; font-weight: 600; }
-        footer { margin-top: 50px; font-size: 0.8em; color: #e2e8f0; text-transform: uppercase; letter-spacing: 1px; }
 
-.about-btn {
-    color: #e2e8f0; 
-    text-decoration: none;
-    font-weight: bold;
-    border-bottom: 1px solid rgba(147, 197, 253, 0.5);
-    padding-bottom: 2px;
-    margin-left: 15px;
-}
+        html { scroll-behavior: smooth; }
         
+        body { 
+            margin: 0; 
+            background-color: #000;
+            background-image: url('file:///C:/sens-sig/final.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+            color: var(--text-main); 
+            font-family: 'SF Pro Display', 'Segoe UI', sans-serif; 
+            overflow-x: hidden;
+            text-align: left;
+        }
+
+        .page-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        /* --- NAVIGATION --- */
+        .navbar {
+            display: flex; align-items: center; padding: 1.2rem 8%;
+            background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(20px);
+            position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .brand { display: flex; align-items: center; gap: 15px; font-weight: 700; font-size: 1.4rem; text-decoration: none; color: white; }
+        .logo-img { height: 40px; }
+        .nav-links { display: flex; gap: 35px; margin-left: auto; }
+        .nav-link { text-decoration: none; color: white; font-weight: 500; font-size: 0.9rem; transition: var(--transition); opacity: 0.8; }
+        .nav-link:hover { opacity: 1; color: var(--primary-blue); }
+
+        /* --- HERO --- */
+        #home { padding: 160px 8% 120px; text-align: center; }
+        .hero h1 { font-size: 3.8rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 24px; color: white; line-height: 1.1; }
+        .hero p { font-size: 1.5rem; max-width: 850px; margin: 0 auto; color: var(--text-gray); }
+
+        /* --- ABOUT --- */
+        #about { padding: 80px 8%; scroll-margin-top: 100px; }
+        .about-container { max-width: 1000px; margin: 0 auto; }
+        .experience-header h2 { text-align: center; font-size: 3rem; font-weight: 800; margin-bottom: 20px; color: white; }
+        .mission-statement { font-size: 1.7rem; color: var(--text-gray); max-width: 900px; margin: 0 auto 80px; text-align: center; line-height: 1.5; }
+
+        /* --- CARDS --- */
+        .card-style {
+            background: rgba(255, 255, 255, 0.1); 
+            backdrop-filter: blur(15px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            text-align: left;
+        }
+
+        .card-style::before {
+            content: ""; position: absolute; top: -20%; left: -10%; width: 40%; height: 80%;
+            background: radial-gradient(circle, rgba(0, 85, 255, 0.2) 0%, transparent 70%);
+            z-index: 0; animation: auraMove 12s infinite alternate;
+        }
+
+        @keyframes auraMove {
+            0% { transform: translate(0,0); }
+            100% { transform: translate(120%, 60%); }
+        }
+
+        /* --- EXPERTISE GRID --- */
+        .expertise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 40px; }
+        .expertise-item {
+            padding: 50px 40px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+            font-weight: 750; font-size: 1.3rem; color: white;
+            transition: var(--transition);
+        }
+        .expertise-item:hover { background-color: var(--primary-blue); border-color: var(--primary-blue); }
+        
+        .expertise-icon {
+            margin-bottom: 20px;
+            color: #60a5fa;
+            transition: var(--transition);
+        }
+        .expertise-item:hover .expertise-icon {
+            color: white;
+        }
+
+        .specialist-section { padding: 80px 60px; margin-bottom: 40px; }
+        .specialist-section h3 { font-size: 2.6rem; color: #60a5fa; margin: 0 0 30px; font-weight: 850; letter-spacing: -0.02em; }
+        .specialist-section p { font-size: 1.35rem; line-height: 1.9; color: rgba(255,255,255,0.9); }
+        .specialist-section:hover { transform: translateY(-5px); border-color: var(--primary-blue); }
+
+        /* --- CONTACT --- */
+        #contact { padding: 120px 8%; text-align: center; }
+        .contact-card {
+            max-width: 650px; margin: 0 auto; background: rgba(255,255,255,0.05); backdrop-filter: blur(20px);
+            padding: 70px 50px; border-radius: 35px; border: 1px solid rgba(255,255,255,0.1); 
+        }
+        .email-link { font-size: 1.8rem; font-weight: 700; color: #60a5fa; text-decoration: none; transition: var(--transition); }
+        .location-info { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 20px; color: var(--text-gray); font-size: 1.1rem; }
+
+        /* --- FOOTER --- */
+        .footer-notice { text-align: center; padding: 50px 8%; background-color: rgba(0,0,0,0.8); border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-gray); line-height: 1.6; }
+        .footer-notice .copyright { font-weight: 600; color: white; margin-bottom: 5px; display: block; }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 1rem 5%; }
+            .nav-links { gap: 15px; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .experience-header h2 { font-size: 2rem; }
+            .mission-statement { font-size: 1.2rem; margin-bottom: 40px; }
+            .expertise-grid { grid-template-columns: 1fr; }
+            .specialist-section { padding: 40px 30px; }
+            .specialist-section h3 { font-size: 1.8rem; }
+            .specialist-section p { font-size: 1.1rem; }
+            .contact-card { padding: 40px 20px; }
+            .email-link { font-size: 1.3rem; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Sens-Sig</h1>
-        <div class="tagline">Strategic Tech Partnerships & Market Entry <br>Connecting Innovation to Israel's Tier-1 Carriers</div>
 
-        <div class="expertise">
-            <span class="expertise-item">Zero-Hardware Security Solutions & AI Analytics</span>
-            <span class="expertise-item">VMS & Enterprise Security Systems</span>
-            <span class="expertise-item">Cyber-Security</span>
-            <span class="expertise-item">Telecom Business Development Specialist</span>
+    <div class="page-overlay"></div>
+
+    <nav class="navbar">
+        <a href="#home" class="brand">
+            <img src="file:///C:/sens-sig/logo1.svg" alt="SENS-SIG Logo" class="logo-img">
+            <span>SENS-SIG</span>
+        </a>
+        <div class="nav-links">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </div>
+    </nav>
 
-        <div class="personal-note">Led by Uri Hemo, Subject Matter Expert</div>
-        <br><br>
-     
-       <!-- <a href="mailto:uri.hemo@sens-sig.com" class="contact-btn">Get in Touch</a> 
-    <div style="margin-top: 25px;">  
-    <a href="mailto:uri.hemo@sens-sig.com" class="contact-btn">Get in Touch</a>
-    <a href="about.html" style="margin-left: 15px; color: #ffffff; text-decoration: none; font-weight: bold; border-bottom: 1px solid #93c5fd; padding-bottom: 2px;">About Uri</a>
-    </div>  -->
+    <section id="home" class="hero">
+        <h1>Strategic Tech Partnerships &<br>Market Entry</h1>
+        <p>Connecting Innovation to Israel's Tier-1 Carriers</p>
+    </section>
 
-    <div style="margin-top: 30px;">
-        <a href="mailto:uri.hemo@sens-sig.com" class="contact-btn">Get in Touch</a>
-        <a href="about.html" class="about-btn">About Uri</a>
-    </div>
+    <section id="about">
+        <div class="about-container">
+            <div class="experience-header">
+                <h2>Strategic Market Entry & Professional Partnerships</h2>
+                <p class="mission-statement">Establishing the vital link between global technological innovation and the Israeli enterprise ecosystem, backed by extensive hands-on professional experience.</p>
+            </div>
 
- 
-    
-        <footer>
-            &copy; 2026 Sens-Sig Strategic Ventures | Israel
-        </footer>
-        <div class="construction">*** Site currently under construction, Something new is on the way</div>
-    </div>
+            <div class="specialist-section card-style">
+                <h3>Telecom Business Development Specialist</h3>
+                <p>We facilitate strategic market expansion by opening doors at the executive level of Israel’s leading Tier-1 carriers and major enterprises. Our expertise lies in navigating the complex Israeli corporate landscape to ensure your solutions reach key decision-makers. <br><br>Combining technical proficiency with an results-driven sales approach, we manage the entire business cycle from initial introduction through professional integration. Our partnership extends beyond the contract, providing the continuous local presence and support necessary to maintain and scale your market position.</p>
+            </div>
+
+            <div class="expertise-grid">
+                <!-- Card 1: New AI Icon -->
+                <div class="expertise-item card-style">
+                    <div class="expertise-icon">
+                        <svg xmlns="http://w3.org" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10.5 22c-1.8 0-3.3-1.4-3.5-3.2L6.3 12.6C6.1 11.2 7.1 10 8.5 10h7c1.4 0 2.4 1.2 2.2 2.6l-.7 6.2c-.2 1.8-1.7 3.2-3.5 3.2h-3z" opacity="0.2"/>
+                            <path d="M12 2a7 7 0 0 0-7 7c0 1.7.6 3.3 1.7 4.5l.3.5c.5.8.5 1.8.4 2.8l-.1.7c-.1 1.1.7 2 1.7 2h10c1 0 1.8-.9 1.7-2l-.1-.7c-.1-1-.1-2 .4-2.8l.3-.5c1.1-1.2 1.7-2.8 1.7-4.5a7 7 0 0 0-7-7z"/>
+                            <circle cx="12" cy="9" r="3" stroke-dasharray="2 2"/>
+                            <text x="12" y="10.5" font-size="4" font-family="Arial" font-weight="900" fill="currentColor" text-anchor="middle">AI</text>
+                        </svg>
+                    </div>
+                    Zero-Hardware Security & AI Analytics
+                </div>
+                
+                <!-- Card 2: CCTV Camera -->
+                <div class="expertise-item card-style">
+                    <div class="expertise-icon">
+                        <svg xmlns="http://w3.org" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 10l4.55-2.27A1 1 0 0 1 22 8.61v6.78a1 1 0 0 1-1.45.89L16 14v-4z"/><rect x="2" y="6" width="14" height="12" rx="2" ry="2"/><path d="M10 10l-2 2 2 2"/></svg>
+                    </div>
+                    VMS & Enterprise Security Systems
+                </div>
+
+                <!-- Card 3: Cyber Security Shield -->
+                <div class="expertise-item card-style">
+                    <div class="expertise-icon">
+                        <svg xmlns="http://w3.org" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    Advanced Cyber-Security Solutions
+                </div>
+
+                <!-- Card 4: Telecom -->
+                <div class="expertise-item card-style">
+                    <div class="expertise-icon">
+                        <svg xmlns="http://w3.org" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+                    </div>
+                    Infrastructure & Telecom Networks
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-card">
+            <h2>Start Your Market Entry</h2>
+            <p>Ready to discuss your strategy?</p>
+            <a href="mailto:uri.hemo@sens-sig.com" class="email-link">uri.hemo@sens-sig.com</a>
+            
+            <div class="location-info">
+                <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>Holon, Israel</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-notice">
+        <span class="copyright">© 2026 Sens-Sig Strategic Ventures | Israel</span>
+        Site currently under construction, Something new is on the way
+    </footer>
+
 </body>
 </html>
