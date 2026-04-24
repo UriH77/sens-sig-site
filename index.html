@@ -82,8 +82,16 @@
             100% { transform: translate(120%, 60%); }
         }
 
+        /* --- EXPERTISE LABEL --- */
+        .expertise-label {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 40px 0 10px 0;
+        }
+
         /* --- EXPERTISE GRID --- */
-        .expertise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 40px; }
+        .expertise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 15px; }
         .expertise-item {
             padding: 50px 40px;
             display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
@@ -112,7 +120,7 @@
             max-width: 650px; margin: 0 auto; background: rgba(255,255,255,0.05); backdrop-filter: blur(20px);
             padding: 70px 50px; border-radius: 35px; border: 1px solid rgba(255,255,255,0.1); 
         }
-        .email-link { font-size: 1.8rem; font-weight: 700; color: #60a5fa; text-decoration: none; transition: var(--transition); }
+        .email-link { font-size: 1.8rem; font-weight: 700; color: #60a5fa; text-decoration: none; transition: var(--transition); display: inline-flex; align-items: center; gap: 12px; }
         .location-info { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 20px; color: var(--text-gray); font-size: 1.1rem; }
 
         /* --- FOOTER --- */
@@ -146,7 +154,7 @@
         </a>
         <div class="nav-links">
             <a href="#home" class="nav-link">Home</a>
-            <a href="#about" class="nav-link">About</a>
+            <a href="about.html" class="nav-link">About</a>
             <a href="#contact" class="nav-link">Contact</a>
         </div>
     </nav>
@@ -165,8 +173,10 @@
 
             <div class="specialist-section card-style">
                 <h3>Telecom Business Development Specialist</h3>
-                <p>We facilitate strategic market expansion by opening doors at the executive level of Israel’s leading Tier-1 carriers and major enterprises. Our expertise lies in navigating the complex Israeli corporate landscape to ensure your solutions reach key decision-makers. <br><br>Combining technical proficiency with an results-driven sales approach, we manage the entire business cycle from initial introduction through professional integration. Our partnership extends beyond the contract, providing the continuous local presence and support necessary to maintain and scale your market position.</p>
+                <p>We facilitate strategic market expansion by opening doors at the executive level of Israel's leading Tier-1 carriers and major enterprises. Our expertise lies in navigating the complex Israeli corporate landscape to ensure your solutions reach key decision-makers. <br><br>Combining technical proficiency with an results-driven sales approach, we manage the entire business cycle from initial introduction through professional integration. Our partnership extends beyond the contract, providing the continuous local presence and support necessary to maintain and scale your market position.</p>
             </div>
+
+            <p class="expertise-label">Areas of Expertise:</p>
 
             <div class="expertise-grid">
                 <!-- Card 1: New AI Icon -->
@@ -213,7 +223,10 @@
         <div class="contact-card">
             <h2>Start Your Market Entry</h2>
             <p>Ready to discuss your strategy?</p>
-            <a href="mailto:uri.hemo@sens-sig.com" class="email-link">uri.hemo@sens-sig.com</a>
+            <a href="mailto:uri.hemo@sens-sig.com" class="email-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                uri.hemo@sens-sig.com
+            </a>
             
             <div class="location-info">
                 <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>

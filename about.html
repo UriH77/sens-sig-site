@@ -1,69 +1,250 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Sens-Sig</title>
+    <title>SENS-SIG | About Us</title>
     <style>
-        body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    min-height: 100vh; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px; 
-    background: url('final.jpg') no-repeat center center fixed;
-    background-size: cover;
-    text-align: center;
-}
-
-.container {
-    background: rgba(10, 25, 47, 0.7); 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    padding: 30px; 
-    border-radius: 16px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    max-width: 650px;
-    width: 90%;
-    color: white;
-}
-        h1 { color: #ffffff; margin-top: 0; margin-bottom: 20px; font-size: 2.2em; text-align: center; text-shadow: 2px 2px 4px rgba(0,0,0,3); } 
-        p {
-            line-height: 1.8;
-            font-size: 1.1em;
-            text-align: left; 
-            color: #e2e8f0;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        :root {
+            --primary-blue: #0055ff;
+            --executive-navy: #0f172a;
+            --text-main: #ffffff;
+            --text-gray: #e2e8f0;
+            --transition: all 0.5s cubic-bezier(0.15, 1, 0.3, 1);
         }
-      <!--  .back-btn:hover { background: rgba(147, 197, 253, 0.2); }  -->
 
-.back-btn {
-    display: inline-block;
-    margin-top: 20px;
-    color: #93c5fd;
-    text-decoration: none;
-    font-weight: bold;
-    border: 1px solid #93c5fd;
-    padding: 10px 20px;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-       
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            background-color: #000;
+            background-image: url('final.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-main);
+            font-family: 'SF Pro Display', 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+            text-align: left;
+        }
+
+        .page-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        /* --- NAVIGATION --- */
+        .navbar {
+            display: flex; align-items: center; padding: 1.2rem 8%;
+            background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(20px);
+            position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .brand { display: flex; align-items: center; gap: 15px; font-weight: 700; font-size: 1.4rem; text-decoration: none; color: white; }
+        .logo-img { height: 40px; }
+        .nav-links { display: flex; gap: 35px; margin-left: auto; }
+        .nav-link { text-decoration: none; color: white; font-weight: 500; font-size: 0.9rem; transition: var(--transition); opacity: 0.8; }
+        .nav-link:hover { opacity: 1; color: var(--primary-blue); }
+
+        /* --- PAGE CONTENT --- */
+        .about-page { padding: 100px 8% 80px; max-width: 1000px; margin: 0 auto; }
+
+        .about-page h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .about-page .tagline {
+            font-size: 1.5rem;
+            color: #60a5fa;
+            font-weight: 600;
+            margin-bottom: 60px;
+        }
+
+        /* --- CARDS --- */
+        .card-style {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+
+        .card-style::before {
+            content: ""; position: absolute; top: -20%; left: -10%; width: 40%; height: 80%;
+            background: radial-gradient(circle, rgba(0, 85, 255, 0.2) 0%, transparent 70%);
+            z-index: 0; animation: auraMove 12s infinite alternate;
+        }
+
+        @keyframes auraMove {
+            0% { transform: translate(0,0); }
+            100% { transform: translate(120%, 60%); }
+        }
+
+        .content-section {
+            padding: 60px 60px;
+            margin-bottom: 30px;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            color: #60a5fa;
+            margin: 0 0 25px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .content-section p {
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: rgba(255,255,255,0.9);
+            margin: 0;
+        }
+
+        .content-section:hover { transform: translateY(-5px); border-color: var(--primary-blue); }
+
+        /* --- WHY PARTNER GRID --- */
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .why-item {
+            padding: 40px 35px;
+        }
+
+        .why-item h3 {
+            font-size: 1.3rem;
+            color: #60a5fa;
+            margin: 0 0 15px;
+            font-weight: 700;
+        }
+
+        .why-item p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.85);
+            margin: 0;
+        }
+
+        .why-item:hover { transform: translateY(-5px); border-color: var(--primary-blue); }
+
+        /* --- CTA BUTTON --- */
+        .cta-section {
+            text-align: center;
+            padding: 60px 0 80px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 22px 48px;
+            border-radius: 50px;
+            transition: var(--transition);
+            border: 2px solid var(--primary-blue);
+            letter-spacing: 0.01em;
+        }
+
+        .cta-btn:hover {
+            background: transparent;
+            color: white;
+            border-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 85, 255, 0.4);
+        }
+
+        /* --- FOOTER --- */
+        .footer-notice { text-align: center; padding: 50px 8%; background-color: rgba(0,0,0,0.8); border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-gray); line-height: 1.6; }
+        .footer-notice .copyright { font-weight: 600; color: white; margin-bottom: 5px; display: block; }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 1rem 5%; }
+            .nav-links { gap: 15px; }
+            .about-page { padding: 60px 5% 40px; }
+            .about-page h1 { font-size: 2rem; }
+            .about-page .tagline { font-size: 1.1rem; margin-bottom: 35px; }
+            .content-section { padding: 35px 25px; }
+            .content-section h2 { font-size: 1.6rem; }
+            .content-section p { font-size: 1rem; }
+            .why-grid { grid-template-columns: 1fr; }
+            .why-item { padding: 30px 25px; }
+            .cta-btn { font-size: 1rem; padding: 18px 30px; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Uri Hemo</h1>
-        <p>
-            A seasoned Technology Leader and Strategic Sales Expert with a proven track record in the Israeli Tier-1 Enterprise market.
-            Uri specializes in the full lifecycle of complex technological deployments from high-level C-Suite engagements and strategic sales to hands-on implementation and long-term Post-Sale management.
-            <br><br>
-            With deep expertise in VMS, Video Analytics, Cyber Security, and Telecom infrastructures, he serves as a vital bridge between disruptive innovations and large-scale organizational needs, ensuring technological excellence and commercial success.
-        </p>
-        <a href="index.html" class="back-btn">← Back to Home</a>
+
+    <div class="page-overlay"></div>
+
+    <nav class="navbar">
+        <a href="index.html#home" class="brand">
+            <img src="logo1.svg" alt="SENS-SIG Logo" class="logo-img">
+            <span>SENS-SIG</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html#home" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="about-page">
+
+        <h1>About Us</h1>
+        <p class="tagline">Bridging Technology and Opportunity.</p>
+
+        <div class="content-section card-style">
+            <h2>Who We Are</h2>
+            <p>SENS-SIG is a boutique strategic representation firm specializing in high-stakes market entry and business development within Israel's most demanding sectors: Telecom, Banking, and Critical Infrastructure.<br><br>We provide global technology providers with more than just a "foot in the door." We offer the technical authority and operational excellence required to navigate the complex Israeli ecosystem.</p>
+        </div>
+
+        <div class="content-section card-style">
+            <h2>The Foundation of Our Success</h2>
+            <p>Founded by Uri Hemo, a seasoned expert in Solution Engineering and Project Management, our firm was built on the understanding that in fields like Zero-Hardware Security & AI Analytics, Cyber-Security, and Enterprise VMS, a sales pitch is never enough. You need a partner who speaks the language of your engineers and your clients' CTOs.</p>
+        </div>
+
+        <div class="why-grid">
+            <div class="why-item card-style">
+                <h3>Technical Authority</h3>
+                <p>With a deep background in Pre-Sale and Solution Architecture, we ensure your technology is correctly positioned and localized for the Israeli market.</p>
+            </div>
+            <div class="why-item card-style">
+                <h3>Strategic Execution</h3>
+                <p>Leveraging years of experience in managing complex projects, we handle the entire lifecycle—from the initial high-level introduction to successful system integration.</p>
+            </div>
+            <div class="why-item card-style">
+                <h3>Sector-Specific Expertise</h3>
+                <p>We possess an intimate understanding of the regulatory requirements and procurement processes within the Israeli Banking and Telecom industries.</p>
+            </div>
+            <div class="why-item card-style">
+                <h3>Long-Term Partnership</h3>
+                <p>At SENS-SIG, we don't just open doors, we manage the journey through them, ensuring long-term growth and sustainable partnerships for the companies we represent.</p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <a href="index.html#contact" class="cta-btn">Let's Discuss Your Israel Entry Strategy</a>
+        </div>
+
     </div>
+
+    <footer class="footer-notice">
+        <span class="copyright">© 2026 SENS-SIG Strategic Ventures | Israel</span>
+        Site currently under construction, Something new is on the way
+    </footer>
+
 </body>
 </html>
