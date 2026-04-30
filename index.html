@@ -3,242 +3,1221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SENS-SIG | Telecom Business Development</title>
+    <title>SENS-SIG | Strategic Tech Partnerships & Market Entry</title>
+    <!-- Security Headers via meta tags -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <style>
+        /* System font stack replacing Google Fonts — Playfair Display → Georgia serif, DM Sans → system-ui */
+        :root {
+            --font-display: 'Georgia', 'Times New Roman', serif;
+            --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+        }
+    </style>
     <style>
         :root {
-            --primary-blue: #0055ff;
-            --executive-navy: #0f172a;
-            --text-main: #ffffff;
-            --text-gray: #e2e8f0;
-            --transition: all 0.5s cubic-bezier(0.15, 1, 0.3, 1);
+            --blue: #1a4fd6;
+            --blue-light: #3b6ef5;
+            --blue-pale: #eef2ff;
+            --navy: #0c1a3a;
+            --teal: #0d9488;
+            --teal-pale: #f0fdfa;
+            --amber: #d97706;
+            --amber-pale: #fffbeb;
+            --text: #1a1f2e;
+            --text-muted: #5a6478;
+            --border: #dce5f5;
+            --bg: #eef3fd;
+            --white: #f6f9ff;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        html { scroll-behavior: smooth; }
-        
-        body { 
-            margin: 0; 
-            background-color: #000;
-            background-image: url('final.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; 
-            color: var(--text-main); 
-            font-family: 'SF Pro Display', 'Segoe UI', sans-serif; 
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
             overflow-x: hidden;
-            text-align: left;
+            line-height: 1.6;
         }
 
-        .page-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: -1;
-        }
-
-        /* --- NAVIGATION --- */
+        /* ── NAVBAR ── */
         .navbar {
-            display: flex; align-items: center; padding: 1.2rem 8%;
-            background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(20px);
-            position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            padding: 0 6%;
+            height: 72px;
+            background: rgba(248, 249, 252, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
         }
-        .brand { display: flex; align-items: center; gap: 15px; font-weight: 700; font-size: 1.4rem; text-decoration: none; color: white; }
-        .logo-img { height: 40px; }
-        .nav-links { display: flex; gap: 35px; margin-left: auto; }
-        .nav-link { text-decoration: none; color: white; font-weight: 500; font-size: 0.9rem; transition: var(--transition); opacity: 0.8; }
-        .nav-link:hover { opacity: 1; color: var(--primary-blue); }
 
-        /* --- HERO --- */
-        #home { padding: 160px 8% 120px; text-align: center; }
-        .hero h1 { font-size: 3.8rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 24px; color: white; line-height: 1.1; }
-        .hero p { font-size: 1.5rem; max-width: 850px; margin: 0 auto; color: var(--text-gray); }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--navy);
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
 
-        /* --- ABOUT --- */
-        #about { padding: 80px 8%; scroll-margin-top: 100px; }
-        .about-container { max-width: 1000px; margin: 0 auto; }
-        .experience-header h2 { text-align: center; font-size: 3rem; font-weight: 800; margin-bottom: 20px; color: white; }
-        .mission-statement { font-size: 1.7rem; color: var(--text-gray); max-width: 900px; margin: 0 auto 80px; text-align: center; line-height: 1.5; }
+        .logo-img { height: 36px; }
 
-        /* --- CARDS --- */
-        .card-style {
-            background: rgba(255, 255, 255, 0.1); 
-            backdrop-filter: blur(15px);
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: auto;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s var(--ease);
+        }
+
+        .nav-link:hover { color: var(--blue); background: var(--blue-pale); }
+
+        .nav-cta {
+            background: var(--blue);
+            color: white !important;
+            border-radius: 8px;
+            padding: 9px 20px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            margin-left: 8px;
+        }
+
+        .nav-cta:hover { background: var(--blue-light) !important; color: white !important; }
+
+        /* ── HAMBURGER ── */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            margin-left: auto;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: all 0.3s var(--ease);
+        }
+
+        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 6%;
+            flex-direction: column;
+            gap: 4px;
+            z-index: 999;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .mobile-menu.open { display: flex; }
+        .mobile-menu .nav-link { padding: 12px 16px; border-radius: 8px; }
+        .mobile-menu .nav-cta { text-align: center; padding: 13px 16px; margin-left: 0; margin-top: 8px; }
+
+        /* ── HERO ── */
+        #home {
+            padding: 100px 6% 90px;
+            text-align: center;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            transition: var(--transition);
-            text-align: left;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .card-style::before {
-            content: ""; position: absolute; top: -20%; left: -10%; width: 40%; height: 80%;
-            background: radial-gradient(circle, rgba(0, 85, 255, 0.2) 0%, transparent 70%);
-            z-index: 0; animation: auraMove 12s infinite alternate;
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 90% 70% at 50% -5%, #b8d0ff 0%, #d4e4ff 35%, transparent 70%),
+                radial-gradient(ellipse 60% 50% at 10% 80%, #c5deff 0%, transparent 60%),
+                radial-gradient(ellipse 50% 40% at 90% 90%, #cde8f5 0%, transparent 55%);
+            z-index: 0;
         }
 
-        @keyframes auraMove {
-            0% { transform: translate(0,0); }
-            100% { transform: translate(120%, 60%); }
+        .hero-img {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
         }
 
-        /* --- EXPERTISE LABEL --- */
-        .expertise-label {
-            color: white;
-            font-size: 1.3rem;
+        .hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0.18;
+            filter: grayscale(25%);
+        }
+
+        .hero-content { position: relative; z-index: 1; max-width: 820px; margin: 0 auto; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--blue-pale);
+            color: var(--blue);
+            border: 1px solid #c7d8ff;
+            border-radius: 50px;
+            padding: 6px 18px;
+            font-size: 0.82rem;
             font-weight: 600;
-            margin: 40px 0 10px 0;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            animation: fadeUp 0.6s var(--ease) both;
         }
 
-        /* --- EXPERTISE GRID --- */
-        .expertise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 15px; }
-        .expertise-item {
-            padding: 50px 40px;
-            display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
-            font-weight: 750; font-size: 1.3rem; color: white;
-            transition: var(--transition);
+        .hero-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--blue);
+            border-radius: 50%;
         }
-        .expertise-item:hover { background-color: var(--primary-blue); border-color: var(--primary-blue); }
-        
-        .expertise-icon {
-            margin-bottom: 20px;
-            color: #60a5fa;
-            transition: var(--transition);
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            animation: fadeUp 0.6s 0.1s var(--ease) both;
         }
-        .expertise-item:hover .expertise-icon {
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--blue);
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 44px;
+            line-height: 1.7;
+            animation: fadeUp 0.6s 0.2s var(--ease) both;
+        }
+
+        .hero-trust-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+            animation: fadeUp 0.6s 0.25s var(--ease) both;
+        }
+
+        .hero-trust-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .hero-trust-item svg { color: var(--teal); flex-shrink: 0; }
+
+        @media (max-width: 480px) {
+            .hero-trust-row { gap: 12px; flex-direction: column; align-items: center; }
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            animation: fadeUp 0.6s 0.3s var(--ease) both;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--blue);
             color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 14px 30px;
+            border-radius: 10px;
+            transition: all 0.25s var(--ease);
+            box-shadow: 0 4px 20px rgba(26,79,214,0.3);
         }
 
-        .specialist-section { padding: 80px 60px; margin-bottom: 40px; }
-        .specialist-section h3 { font-size: 2.6rem; color: #60a5fa; margin: 0 0 30px; font-weight: 850; letter-spacing: -0.02em; }
-        .specialist-section p { font-size: 1.35rem; line-height: 1.9; color: rgba(255,255,255,0.9); }
-        .specialist-section:hover { transform: translateY(-5px); border-color: var(--primary-blue); }
+        .btn-primary:hover {
+            background: var(--blue-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(26,79,214,0.35);
+        }
 
-        /* --- CONTACT --- */
-        #contact { padding: 120px 8%; text-align: center; }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 14px 28px;
+            border-radius: 10px;
+            border: 1.5px solid var(--blue);
+            transition: all 0.25s var(--ease);
+        }
+
+        .btn-secondary:hover {
+            background: var(--blue-pale);
+            transform: translateY(-2px);
+        }
+
+        /* ── STATS BAR ── */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            padding: 0 6%;
+            margin-top: 70px;
+        }
+
+        .stats-inner {
+            display: flex;
+            width: 100%;
+            max-width: 860px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        .stat-item {
+            flex: 1;
+            padding: 28px 20px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
+
+        .stat-item:last-child { border-right: none; }
+
+        .stat-num {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--navy);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* ── SECTION BASE ── */
+        section { padding: 90px 6%; }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 16px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 20px;
+            height: 2px;
+            background: var(--blue);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+
+        .section-sub {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 600px;
+        }
+
+        /* ── ABOUT ── */
+        #about { background: var(--white); }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .about-text .section-sub { max-width: 100%; }
+
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+
+        /* Partnership highlight box */
+        .partnership-highlight {
+            background: linear-gradient(135deg, var(--blue-pale) 0%, #f0f7ff 100%);
+            border: 1px solid #c7d8ff;
+            border-left: 4px solid var(--blue);
+            border-radius: 0 12px 12px 0;
+            padding: 20px 24px;
+            margin-top: 28px;
+        }
+
+        .partnership-highlight p {
+            margin: 0 !important;
+            color: var(--blue) !important;
+            font-style: italic;
+            font-weight: 500;
+            font-size: 1rem !important;
+        }
+
+        .about-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .about-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px 24px;
+            transition: all 0.3s var(--ease);
+        }
+
+        .about-card:hover {
+            border-color: #c7d8ff;
+            background: var(--blue-pale);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(26,79,214,0.1);
+        }
+
+        .about-card-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--blue-pale);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+            color: var(--blue);
+        }
+
+        .about-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 6px;
+        }
+
+        .about-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0 !important;
+        }
+
+        .about-card.span-2 { grid-column: span 2; }
+
+        /* Teal accent card */
+        .about-card.teal-accent {
+            background: var(--teal-pale);
+            border-color: #99f6e4;
+        }
+
+        .about-card.teal-accent .about-card-icon { background: #ccfbf1; color: var(--teal); }
+        .about-card.teal-accent h4 { color: #0f766e; }
+        .about-card.teal-accent:hover { background: #d1fae5; border-color: #6ee7b7; }
+
+        /* Blue accent card for Sector-Specific Expertise */
+        .about-card.blue-accent {
+            background: linear-gradient(135deg, #f4f7ff 0%, #ecf2ff 100%);
+            border-color: #d8e3fa;
+        }
+        .about-card.blue-accent .about-card-icon { background: #c7d8ff; color: var(--blue); }
+        .about-card.blue-accent h4 { color: var(--navy); }
+        .about-card.blue-accent p { color: #3a4f7a; }
+        .about-card.blue-accent:hover { background: linear-gradient(135deg, #ebf1ff 0%, #dde8ff 100%); border-color: #c2d4f5; }
+
+        /* Stronger hover for default Technical Authority card */
+        .about-card:not(.teal-accent):not(.blue-accent):hover {
+            background: #dbe6ff;
+            border-color: #a8c2f5;
+        }
+
+        /* ── EXPERTISE ── */
+        #expertise { background: var(--bg); }
+
+        .expertise-header {
+            max-width: 1100px;
+            margin: 0 auto 50px;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .expertise-card {
+            background: #e6efff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s var(--ease);
+            position: relative;
+        }
+
+        .expertise-card:hover {
+            border-color: #a8c2f5;
+            background: #d8e6ff;
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(26,79,214,0.12);
+        }
+
+        .expertise-body {
+            padding: 32px 28px 36px;
+            text-align: center;
+        }
+        .expertise-body h3 { margin-bottom: 0; }
+        .expertise-card-icon { margin-left: auto; margin-right: auto; }
+
+        .expertise-card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--blue-pale);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue);
+            margin-bottom: 16px;
+            margin-top: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .expertise-body h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .expertise-body p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* color accent bars */
+        .expertise-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--blue);
+            transform: scaleX(0);
+            transition: transform 0.3s var(--ease);
+        }
+        .expertise-card:hover::after { transform: scaleX(1); }
+
+        .expertise-card.accent-teal::after { background: var(--teal); }
+        .expertise-card.accent-amber::after { background: var(--amber); }
+        .expertise-card.accent-navy::after { background: var(--navy); }
+
+        /* ── PROCESS ── */
+        #process { background: var(--navy); }
+
+        .process-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        #process .section-label { color: #7fa8ff; }
+        #process .section-label::before { background: #7fa8ff; }
+        #process .section-title { color: white; }
+        #process .section-sub { color: rgba(255,255,255,0.6); }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            margin-top: 52px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .process-step {
+            padding: 44px 36px;
+            border-right: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            transition: background 0.3s;
+        }
+
+        .process-step:last-child { border-right: none; }
+        .process-step:hover { background: rgba(255,255,255,0.07); }
+
+        .step-num {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: rgba(127, 168, 255, 0.3);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .process-step h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .process-step p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.7;
+        }
+
+        /* ── PARTNERSHIP BANNER ── */
+        #partnership {
+            background: linear-gradient(135deg, #e8f5f1 0%, #d4ede7 50%, #c8e6de 100%);
+            padding: 80px 6%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #partnership::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230d9488' fill-opacity='0.07'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .partnership-banner-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .partnership-text .section-label { color: #0d7a6e; }
+        .partnership-text .section-label::before { background: #0d7a6e; }
+        .partnership-text .section-title { color: #0c2e28; }
+
+        .partnership-text p {
+            color: #2d5c54;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-top: 16px;
+        }
+
+        .partnership-pillars {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        /* Confidentiality card spans both columns at the bottom */
+        .pillar-card.span-2 {
+            grid-column: span 2;
+        }
+
+        .pillar-card {
+            background: rgba(255,255,255,0.7);
+            border: 1px solid rgba(13,148,136,0.2);
+            border-radius: 14px;
+            padding: 24px 20px;
+            transition: all 0.3s;
+        }
+
+        .pillar-card:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(13,148,136,0.15);
+        }
+
+        .pillar-icon {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .pillar-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0c2e28;
+            margin-bottom: 6px;
+        }
+
+        .pillar-card p {
+            font-size: 0.95rem;
+            color: #2d5c54;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* ── CONTACT ── */
+        #contact { background: var(--navy); }
+
+        .contact-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-left .section-label { color: #7fa8ff; }
+        .contact-left .section-label::before { background: #7fa8ff; }
+        .contact-left .section-title { color: white; }
+        .contact-left p {
+            color: rgba(255,255,255,0.6);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-top: 16px;
+        }
+
         .contact-card {
-            max-width: 650px; margin: 0 auto; background: rgba(255,255,255,0.05); backdrop-filter: blur(20px);
-            padding: 70px 50px; border-radius: 35px; border: 1px solid rgba(255,255,255,0.1); 
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 20px;
+            padding: 40px 36px;
         }
-        .email-link { font-size: 1.8rem; font-weight: 700; color: #60a5fa; text-decoration: none; transition: var(--transition); display: inline-flex; align-items: center; gap: 12px; }
-        .location-info { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 20px; color: var(--text-gray); font-size: 1.1rem; }
 
-        /* --- FOOTER --- */
-        .footer-notice { text-align: center; padding: 50px 8%; background-color: rgba(0,0,0,0.8); border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-gray); line-height: 1.6; }
-        .footer-notice .copyright { font-weight: 600; color: white; margin-bottom: 5px; display: block; }
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .contact-item:last-of-type { margin-bottom: 0; }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(26,79,214,0.3);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7fa8ff;
+            flex-shrink: 0;
+        }
+
+        .contact-detail { flex: 1; }
+
+        .contact-detail span {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 4px;
+        }
+
+        .contact-detail a, .contact-detail p {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .contact-detail a:hover { color: #7fa8ff; }
+
+        .contact-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--blue);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 32px;
+            transition: all 0.25s var(--ease);
+            box-shadow: 0 4px 20px rgba(26,79,214,0.4);
+        }
+
+        .contact-btn:hover {
+            background: var(--blue-light);
+            transform: translateY(-2px);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #07101f;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            padding: 28px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-left { display: flex; align-items: center; gap: 12px; }
+
+        .footer-brand {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-copy { font-size: 0.82rem; color: rgba(255,255,255,0.35); }
+        .footer-notice { font-size: 0.82rem; color: rgba(255,255,255,0.3); font-style: italic; }
+
+        /* ── ANIMATIONS ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+        }
+
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+        }
 
         @media (max-width: 768px) {
-            .navbar { padding: 1rem 5%; }
-            .nav-links { gap: 15px; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.1rem; }
-            .experience-header h2 { font-size: 2rem; }
-            .mission-statement { font-size: 1.2rem; margin-bottom: 40px; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+
+            #home { padding: 70px 6% 60px; min-height: auto; }
+
+            .stats-inner { flex-wrap: wrap; }
+            .stat-item { flex: 1 1 45%; border-right: none; border-bottom: 1px solid var(--border); }
+            .stat-item:last-child, .stat-item:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .about-visual { grid-template-columns: 1fr 1fr; }
+            .about-card.span-2 { grid-column: span 2; }
+
             .expertise-grid { grid-template-columns: 1fr; }
-            .specialist-section { padding: 40px 30px; }
-            .specialist-section h3 { font-size: 1.8rem; }
-            .specialist-section p { font-size: 1.1rem; }
-            .contact-card { padding: 40px 20px; }
-            .email-link { font-size: 1.3rem; }
+
+            .process-grid { grid-template-columns: 1fr; }
+            .process-step { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .process-step:last-child { border-bottom: none; }
+
+            .partnership-banner-inner { grid-template-columns: 1fr; gap: 40px; }
+            .contact-wrapper { grid-template-columns: 1fr; gap: 40px; }
+
+            footer { flex-direction: column; align-items: flex-start; }
+        }
+
+        @media (max-width: 480px) {
+            .about-visual { grid-template-columns: 1fr; }
+            .about-card.span-2 { grid-column: span 1; }
+            .partnership-pillars { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="page-overlay"></div>
-
+    <!-- NAVBAR -->
     <nav class="navbar">
         <a href="#home" class="brand">
-          <img src="logo1.svg" alt="SENS-SIG Logo" class="logo-img">
+            <img src="logo1.svg" alt="SENS-SIG" class="logo-img">
             <span>SENS-SIG</span>
         </a>
         <div class="nav-links">
             <a href="#home" class="nav-link">Home</a>
             <a href="about.html" class="nav-link">About</a>
-            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#expertise" class="nav-link">Expertise</a>
+            <a href="#contact" class="nav-link nav-cta">Contact Us</a>
         </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 
-    <section id="home" class="hero">
-        <h1>Strategic Tech Partnerships &<br>Market Entry</h1>
-        <p>Connecting Innovation to Israel's Tier-1 Carriers and major enterprises</p>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home" class="nav-link" onclick="closeMobile()">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="#expertise" class="nav-link" onclick="closeMobile()">Expertise</a>
+        <a href="#contact" class="nav-link nav-cta" onclick="closeMobile()">Contact Us</a>
+    </div>
+
+    <!-- HERO -->
+    <section id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-img">
+            <img src="/final.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">Israel Market Entry — Joint Go-to-Market</div>
+            <h2 class="section-title">Your Trusted Bridge Into<br>Israel's Enterprise Market</h2>
+            <p class="hero-sub">At SENS-SIG, we support international technology providers in navigating Israel’s specialized markets. By leveraging proven sector experience and end-to-end technical expertise, we help our partners establish a reliable local presence and grow steadily.</p>
+            <div class="hero-trust-row">
+                <span class="hero-trust-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    Telecom &amp; Tier-1 Carriers
+                </span>
+                <span class="hero-trust-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    Banking &amp; Financial Institutions
+                </span>
+                <span class="hero-trust-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    Critical Infrastructure
+                </span>
+            </div>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-primary">
+                    Start a Conversation
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+                <a href="about.html" class="btn-secondary">Learn About Us</a>
+            </div>
+        </div>
     </section>
 
+
+    <!-- ABOUT -->
     <section id="about">
-        <div class="about-container">
-            <div class="experience-header">
-                <h2>Strategic Market Entry & Professional Partnerships</h2>
-                <p class="mission-statement">Establishing the vital link between global technological innovation and the Israeli enterprise ecosystem, backed by extensive hands-on professional experience.</p>
+        <div class="about-grid">
+            <div class="about-text reveal">
+                <div class="section-label">Who We Are</div>
+                <h2 class="section-title">Your Strategic Partner in Israel</h2>
+                <p class="section-sub">SENS-SIG is a boutique strategic representation firm specializing in high-stakes market entry and business development within Israel's most demanding sectors.</p>
+                <p>We operate at the intersection of global technology and local market reality — bringing the relationships, technical depth, and sector experience that global vendors need to succeed in Israel's Telecom, Banking, and Critical Infrastructure markets.</p>
+                <p>From first executive contact through full deployment, SENS-SIG functions as a true extension of the vendor team — not a local intermediary, but a committed partner sharing every step of the journey.</p>
+                <div class="partnership-highlight">
+                    <p>"We don't operate in your name — we operate alongside you, as one team, sharing the journey at every stage."</p>
+                </div>
             </div>
-
-            <div class="specialist-section card-style">
-                <h3>Telecom Business Development Specialist</h3>
-                <p>We facilitate strategic market expansion by opening doors at the executive level of Israel's leading Tier-1 carriers and major enterprises. Our expertise lies in navigating the complex Israeli corporate landscape to ensure your solutions reach key decision-makers. <br><br>Combining technical proficiency with an results-driven sales approach, we manage the entire business cycle from initial introduction through professional integration. Our partnership extends beyond the contract, providing the continuous local presence and support necessary to maintain and scale your market position.</p>
-            </div>
-
-            <p class="expertise-label">Areas of Expertise:</p>
-
-            <div class="expertise-grid">
-                <!-- Card 1: New AI Icon -->
-                <div class="expertise-item card-style">
-                    <div class="expertise-icon">
-                        <svg xmlns="http://w3.org" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M10.5 22c-1.8 0-3.3-1.4-3.5-3.2L6.3 12.6C6.1 11.2 7.1 10 8.5 10h7c1.4 0 2.4 1.2 2.2 2.6l-.7 6.2c-.2 1.8-1.7 3.2-3.5 3.2h-3z" opacity="0.2"/>
-                            <path d="M12 2a7 7 0 0 0-7 7c0 1.7.6 3.3 1.7 4.5l.3.5c.5.8.5 1.8.4 2.8l-.1.7c-.1 1.1.7 2 1.7 2h10c1 0 1.8-.9 1.7-2l-.1-.7c-.1-1-.1-2 .4-2.8l.3-.5c1.1-1.2 1.7-2.8 1.7-4.5a7 7 0 0 0-7-7z"/>
-                            <circle cx="12" cy="9" r="3" stroke-dasharray="2 2"/>
-                            <text x="12" y="10.5" font-size="4" font-family="Arial" font-weight="900" fill="currentColor" text-anchor="middle">AI</text>
-                        </svg>
+            <div class="about-visual reveal">
+                <div class="about-card">
+                    <div class="about-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     </div>
-                    Zero-Hardware Security & AI Analytics
+                    <h4>Technical Authority</h4>
+                    <p>Clients and vendors trust us as a seasoned technical advisor — present at the table when it matters most.</p>
                 </div>
-                
-                <!-- Card 2: CCTV Camera -->
-                <div class="expertise-item card-style">
-                    <div class="expertise-icon">
-                        <svg xmlns="http://w3.org" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 10l4.55-2.27A1 1 0 0 1 22 8.61v6.78a1 1 0 0 1-1.45.89L16 14v-4z"/><rect x="2" y="6" width="14" height="12" rx="2" ry="2"/><path d="M10 10l-2 2 2 2"/></svg>
+                <div class="about-card teal-accent">
+                    <div class="about-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
-                    VMS & Enterprise Security Systems
+                    <h4>Collaborative Execution</h4>
+                    <p>Full lifecycle management — always in sync with the vendor, at every step.</p>
                 </div>
-
-                <!-- Card 3: Cyber Security Shield -->
-                <div class="expertise-item card-style">
-                    <div class="expertise-icon">
-                        <svg xmlns="http://w3.org" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <div class="about-card span-2 blue-accent">
+                    <div class="about-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                     </div>
-                    Advanced Cyber-Security Solutions
-                </div>
-
-                <!-- Card 4: Telecom -->
-                <div class="expertise-item card-style">
-                    <div class="expertise-icon">
-                        <svg xmlns="http://w3.org" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
-                    </div>
-                    Infrastructure & Telecom Networks
+                    <h4>Sector-Specific Expertise</h4>
+                    <p>Years of direct project work across Banking, Telecom, and Critical Infrastructure — with the connections and know-how to accelerate market entry.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- EXPERTISE -->
+    <section id="expertise">
+        <div class="expertise-header reveal">
+            <div class="section-label">Strategic Market Access</div>
+            <h2 class="section-title">Our Areas of Expertise</h2>
+            <p class="section-sub">These are the technology domains where we bring deep, hands-on experience — opening doors, providing technical credibility, and accelerating market entry across Israel's most demanding sectors.</p>
+        </div>
+        <div class="expertise-grid">
+            <div class="expertise-card reveal">
+                <div class="expertise-body">
+                    <div class="expertise-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><circle cx="12" cy="10" r="3"/><path d="M7 10a5 5 0 0 1 5-5"/><path d="M17 10a5 5 0 0 1-5 5"/></svg>
+                    </div>
+                    <h3>Zero-Hardware Security & AI Analytics</h3>
+                </div>
+            </div>
+            <div class="expertise-card accent-teal reveal">
+                <div class="expertise-body">
+                    <div class="expertise-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 10l4.55-2.27A1 1 0 0 1 22 8.61v6.78a1 1 0 0 1-1.45.89L16 14v-4z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
+                    </div>
+                    <h3>VMS & Enterprise Security Systems</h3>
+                </div>
+            </div>
+            <div class="expertise-card accent-amber reveal">
+                <div class="expertise-body">
+                    <div class="expertise-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Advanced Cyber-Security Solutions</h3>
+                </div>
+            </div>
+            <div class="expertise-card accent-navy reveal">
+                <div class="expertise-body">
+                    <div class="expertise-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+                    </div>
+                    <h3>Infrastructure & Telecom Networks</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process">
+        <div class="process-wrapper">
+            <div class="reveal">
+                <div class="section-label">How We Work Together</div>
+                <h2 class="section-title">From First Meeting to Lasting Presence</h2>
+                <p class="section-sub">A structured, collaborative approach — we stay involved at every stage, always in close coordination with the vendor partner.</p>
+            </div>
+            <div class="process-grid reveal">
+                <div class="process-step">
+                    <div class="step-num">01</div>
+                    <h3>Executive Market Entry</h3>
+                    <p>We open doors at the C-suite and decision-maker level, leveraging our relationships — while keeping the vendor informed and aligned throughout every introduction.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">02</div>
+                    <h3>Joint Technical Positioning</h3>
+                    <p>We work side-by-side with your engineers to translate your technology for local CTOs — managing pre-sales, proof-of-concept, and solution architecture together.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">03</div>
+                    <h3>Shared Long-Term Growth</h3>
+                    <p>We don't disappear after the deal closes. We provide ongoing local presence and keep the vendor actively involved in account management and market expansion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNERSHIP VALUES BANNER -->
+    <section id="partnership">
+        <div class="partnership-banner-inner">
+            <div class="partnership-text reveal">
+                <div class="section-label">Our Partnership Model</div>
+                <h2 class="section-title">Built on Mutual Success</h2>
+                <p>SENS-SIG was founded on a simple belief: the best results come when vendor and representative operate as one. We keep you in the loop on every meeting, every objection, every milestone — and we grow together.</p>
+                <p>We are not a black box. Transparency, shared strategy, and joint technical depth are the foundation of everything we do.</p>
+            </div>
+            <div class="partnership-pillars reveal">
+                <div class="pillar-card">
+                    <span class="pillar-icon">🤝</span>
+                    <h4>Vendor Alignment</h4>
+                    <p>Full transparency and close collaboration with the vendor at every stage of the process.</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-icon">🔓</span>
+                    <h4>Door-Opening</h4>
+                    <p>Access to Israel's top Tier-1 carriers, banks, and enterprise decision-makers.</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-icon">🛠️</span>
+                    <h4>On-Site Technical Support</h4>
+                    <p>We stand beside the customer during PoC, integration, and post-sale — together with your team.</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-icon">📈</span>
+                    <h4>Shared Growth</h4>
+                    <p>We measure success the same way you do: by growing your footprint in the Israeli market.</p>
+                </div>
+                <div class="pillar-card span-2">
+                    <span class="pillar-icon">🔒</span>
+                    <h4>Confidentiality &amp; Trust</h4>
+                    <p>All consultations are held under a strict <strong>Mutual NDA</strong>, fully protecting intellectual property, strategic interests, and sensitive data for both partners and clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact">
-        <div class="contact-card">
-            <h2>Start Your Market Entry</h2>
-            <p>Ready to discuss your strategy?</p>
-            <a href="mailto:office@sens-sig.com" class="email-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                office@sens-sig.com
-            </a>
-            
-            <div class="location-info">
-                <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                <span>Holon, Israel</span>
+        <div class="contact-wrapper">
+            <div class="contact-left reveal">
+                <div class="section-label">Get In Touch</div>
+                <h2 class="section-title">Ready to Enter the Israeli Market?</h2>
+                <p>Let's discuss your technology, your goals, and how SENS-SIG can be the strategic partner that makes it happen — as a true joint venture, every step of the way.</p>
+            </div>
+            <div class="contact-card reveal">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    </div>
+                    <div class="contact-detail">
+                        <span>Email</span>
+                        <a href="mailto:Office@sens-sig.com">Office@sens-sig.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div class="contact-detail">
+                        <span>Location</span>
+                        <p>Holon, Israel</p>
+                    </div>
+                </div>
+                <a href="mailto:Office@sens-sig.com" class="contact-btn">Send Us a Message →</a>
             </div>
         </div>
     </section>
 
-    <footer class="footer-notice">
-        <span class="copyright">© 2026 SENS-SIG Strategic Ventures | Israel</span>
-        Site currently under construction, Something new is on the way
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-left">
+            <a href="#home" class="footer-brand">SENS-SIG</a>
+            <span class="footer-copy">© 2026 SENS-SIG Strategic Ventures | Israel</span>
+        </div>
+        <span class="footer-notice">Your technology. Our relationships. One shared mission.</span>
     </footer>
 
+    <script>
+        // Security: Prevent clickjacking at JS level
+        if (window.self !== window.top) { window.top.location = window.self.location; }
+
+        // Instant jump (no smooth scroll) when arriving with a hash from another page
+        if (window.location.hash) {
+            const prev = document.documentElement.style.scrollBehavior;
+            document.documentElement.style.scrollBehavior = 'auto';
+            const jump = () => {
+                const el = document.getElementById(window.location.hash.slice(1));
+                if (el) {
+                    const top = el.getBoundingClientRect().top + window.pageYOffset - 72;
+                    window.scrollTo({ top, behavior: 'auto' });
+                }
+                setTimeout(() => { document.documentElement.style.scrollBehavior = prev || ''; }, 50);
+            };
+            // Run after layout settles
+            window.addEventListener('load', jump);
+            requestAnimationFrame(jump);
+        }
+
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+        });
+
+        function closeMobile() {
+            hamburger.classList.remove('open');
+            mobileMenu.classList.remove('open');
+        }
+
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        reveals.forEach(el => observer.observe(el));
+
+        document.querySelectorAll('.mobile-menu .nav-link').forEach(link => {
+            link.addEventListener('click', closeMobile);
+        });
+
+        // Security: Sanitize any dynamic URL params to prevent reflected XSS
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            params.forEach((value, key) => {
+                // If any param exists with script-like content, redirect clean
+                if (/<|>|javascript:|data:/i.test(decodeURIComponent(value))) {
+                    window.location.replace(window.location.pathname);
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
