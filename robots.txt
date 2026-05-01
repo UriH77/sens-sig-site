@@ -1,0 +1,8 @@
+# robots.txt for sens-sig.com
+# Generated for: https://sens-sig.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://sens-sig.com/sitemap.xml
