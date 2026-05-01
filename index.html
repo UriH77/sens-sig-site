@@ -893,6 +893,9 @@
 
         .footer-copy { font-size: 0.82rem; color: rgba(255,255,255,0.35); }
         .footer-notice { font-size: 0.82rem; color: rgba(255,255,255,0.3); font-style: italic; }
+        .footer-right { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .footer-legal { font-size: 0.82rem; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+        .footer-legal:hover { color: rgba(255,255,255,0.7); }
 
         /* ── ANIMATIONS ── */
         @keyframes fadeUp {
@@ -1194,7 +1197,10 @@
             <a href="#home" class="footer-brand">SENS-SIG</a>
             <span class="footer-copy">© 2026 SENS-SIG Strategic Ventures | Israel</span>
         </div>
-        <span class="footer-notice">Your technology. Our relationships. One shared mission.</span>
+        <div class="footer-right">
+            <span class="footer-notice">Your technology. Our relationships. One shared mission.</span>
+            <a href="legal.html" class="footer-legal">Privacy Policy &amp; Terms of Use</a>
+        </div>
     </footer>
 
     <script>

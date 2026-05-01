@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy & Terms of Use | SENS-SIG</title>
+    <meta name="description" content="Privacy Policy and Terms of Use for sens-sig.com">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://www.sens-sig.com/legal.html">
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+    <style>
+        :root {
+            --font-display: 'Georgia', 'Times New Roman', serif;
+            --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            --blue: #1a4fd6;
+            --blue-light: #3b6ef5;
+            --blue-pale: #eef2ff;
+            --navy: #0c1a3a;
+            --text: #1a1f2e;
+            --text-muted: #5a6478;
+            --border: #dce5f5;
+            --bg: #eef3fd;
+            --white: #f6f9ff;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ── NAVBAR ── */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            padding: 0 6%;
+            height: 72px;
+            background: rgba(248, 249, 252, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--navy);
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .logo-img { height: 36px; }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: auto;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s var(--ease);
+        }
+
+        .nav-link:hover { color: var(--blue); background: var(--blue-pale); }
+
+        .nav-cta {
+            background: var(--blue);
+            color: white !important;
+            border-radius: 8px;
+            padding: 9px 20px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            margin-left: 8px;
+        }
+
+        .nav-cta:hover { background: var(--blue-light) !important; color: white !important; }
+
+        /* ── HERO BANNER ── */
+        .legal-hero {
+            background: var(--navy);
+            padding: 70px 6% 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .legal-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 90% at 80% 50%, rgba(26,79,214,0.25) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 60% at 10% 80%, rgba(26,79,214,0.15) 0%, transparent 60%);
+        }
+
+        .legal-hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 820px;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #7fa8ff;
+            margin-bottom: 16px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 20px;
+            height: 2px;
+            background: #7fa8ff;
+        }
+
+        .legal-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+
+        .legal-hero p {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.7;
+        }
+
+        /* ── CONTENT LAYOUT ── */
+        .legal-body {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 60px 6% 80px;
+        }
+
+        /* ── SECTION DIVIDER ── */
+        .legal-section {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 44px 48px;
+            margin-bottom: 28px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+        }
+
+        .legal-section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 12px;
+        }
+
+        .legal-section-label::before {
+            content: '';
+            width: 16px;
+            height: 2px;
+            background: var(--blue);
+        }
+
+        .legal-section h2 {
+            font-family: var(--font-display);
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 24px;
+            line-height: 1.25;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .legal-section h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 28px 0 8px;
+        }
+
+        .legal-section p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        .legal-section p:last-child { margin-bottom: 0; }
+
+        .legal-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 14px;
+        }
+
+        .legal-section ul li {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+            padding: 6px 0 6px 20px;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .legal-section ul li:last-child { border-bottom: none; }
+
+        .legal-section ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--blue);
+            border-radius: 50%;
+        }
+
+        /* Highlight box */
+        .highlight-box {
+            background: var(--blue-pale);
+            border: 1px solid #c7d8ff;
+            border-left: 4px solid var(--blue);
+            border-radius: 0 10px 10px 0;
+            padding: 16px 20px;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            color: var(--blue) !important;
+            font-weight: 500;
+            margin: 0 !important;
+            font-size: 0.92rem !important;
+        }
+
+        /* Contact inline */
+        .legal-contact-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-top: 20px;
+        }
+
+        .legal-contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--blue-pale);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue);
+            flex-shrink: 0;
+        }
+
+        .legal-contact-row a {
+            color: var(--blue);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .legal-contact-row a:hover { text-decoration: underline; }
+
+        .legal-contact-row span {
+            display: block;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+
+        /* Date badge */
+        .date-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 36px;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #07101f;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            padding: 28px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-left { display: flex; align-items: center; gap: 12px; }
+
+        .footer-brand {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-copy { font-size: 0.82rem; color: rgba(255,255,255,0.35); }
+        .footer-right { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .footer-notice { font-size: 0.82rem; color: rgba(255,255,255,0.3); font-style: italic; }
+        .footer-legal { font-size: 0.82rem; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+        .footer-legal:hover { color: rgba(255,255,255,0.7); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 600px) {
+            .legal-section { padding: 28px 24px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand">
+            <img src="logo1.svg" alt="SENS-SIG Logo" class="logo-img">
+            <span>SENS-SIG</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html#home" class="nav-link">Home</a>
+            <a href="index.html#about" class="nav-link">About</a>
+            <a href="index.html#contact" class="nav-link nav-cta">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="legal-hero">
+        <div class="legal-hero-inner">
+            <div class="section-label">Legal</div>
+            <h1>Privacy Policy &amp; Terms of Use</h1>
+            <p>Please read these terms carefully before using sens-sig.com.</p>
+        </div>
+    </div>
+
+    <main class="legal-body">
+
+        <div class="date-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Last updated: May 2026
+        </div>
+
+        <!-- PRIVACY POLICY -->
+        <div class="legal-section">
+            <div class="legal-section-label">Section 1</div>
+            <h2>Privacy Policy</h2>
+
+            <h3>Who We Are</h3>
+            <p>SENS-SIG Strategic Ventures ("we", "us", or "our") operates the website <strong>sens-sig.com</strong>. This Privacy Policy explains how we handle information when you visit our site.</p>
+
+            <h3>Information We Collect</h3>
+            <p>This is an informational website. We do not operate contact forms, collect personal data submissions, or require user accounts. The only data processing that occurs is through the tools listed below.</p>
+
+            <h3>Google Search Console</h3>
+            <p>We use Google Search Console to monitor how our website appears in Google Search results. Search Console collects aggregated, anonymised data about search queries and site performance. It does not track individual users, set cookies on your device, or collect personally identifiable information.</p>
+
+            <div class="highlight-box">
+                <p>Google Search Console is a webmaster tool — not a user-tracking or analytics service. No personal data about you is collected through it.</p>
+            </div>
+
+            <h3>Cookies</h3>
+            <p>sens-sig.com does not place any cookies on your device. No tracking cookies, advertising cookies, or session cookies are used.</p>
+
+            <h3>Third-Party Links</h3>
+            <p>Our website may contain links to external sites. We are not responsible for the privacy practices or content of those sites. We encourage you to review the privacy policies of any site you visit.</p>
+
+            <h3>Data Retention</h3>
+            <p>Because we do not collect personal data through this website, there is no personal data for us to retain or delete.</p>
+
+            <h3>Your Rights</h3>
+            <p>Under applicable law (including GDPR where relevant), you have rights regarding your personal data. Since we do not collect personal data through this website, there is no personal data to access, rectify, or erase. If you have questions, contact us at the address below.</p>
+
+            <h3>Changes to This Policy</h3>
+            <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated date. Continued use of the site after changes constitutes acceptance of the updated policy.</p>
+        </div>
+
+        <!-- TERMS OF USE -->
+        <div class="legal-section">
+            <div class="legal-section-label">Section 2</div>
+            <h2>Terms of Use</h2>
+
+            <h3>Acceptance of Terms</h3>
+            <p>By accessing sens-sig.com, you agree to be bound by these Terms of Use. If you do not agree, please do not use this website.</p>
+
+            <h3>Purpose of the Website</h3>
+            <p>This website is an informational resource for SENS-SIG Strategic Ventures. The content published here is for general information only. Nothing on this site constitutes legal, financial, or professional advice.</p>
+
+            <h3>Intellectual Property</h3>
+            <p>All content on this website — including text, graphics, logos, and structure — is the property of SENS-SIG Strategic Ventures and is protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works from any content without our prior written consent.</p>
+
+            <h3>Permitted Use</h3>
+            <p>You may use this website for lawful, personal, or business information purposes only. The following are prohibited:</p>
+            <ul>
+                <li>Scraping, crawling, or automated data harvesting of website content</li>
+                <li>Any attempt to interfere with or disrupt the website or its servers</li>
+                <li>Misrepresenting your identity or affiliation with SENS-SIG</li>
+                <li>Using this site for any unlawful or fraudulent purpose</li>
+            </ul>
+
+            <h3>Disclaimer of Warranties</h3>
+            <p>This website is provided on an "as is" and "as available" basis. We make no warranties, express or implied, regarding the accuracy, completeness, or availability of the content. We reserve the right to modify or discontinue the site at any time without notice.</p>
+
+            <h3>Limitation of Liability</h3>
+            <p>To the fullest extent permitted by law, SENS-SIG Strategic Ventures shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of, or inability to use, this website or its content.</p>
+
+            <h3>Governing Law</h3>
+            <p>These Terms of Use are governed by the laws of the State of Israel. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts located in Israel.</p>
+
+            <h3>Modifications</h3>
+            <p>We reserve the right to update these Terms at any time. Changes take effect upon posting to this page. Your continued use of the website constitutes acceptance of any revised terms.</p>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="legal-section">
+            <div class="legal-section-label">Questions</div>
+            <h2>Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy or Terms of Use, please reach out:</p>
+            <div class="legal-contact-row">
+                <div class="legal-contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </div>
+                <div>
+                    <span>Email</span>
+                    <a href="mailto:Office@sens-sig.com">Office@sens-sig.com</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            <a href="index.html" class="footer-brand">SENS-SIG</a>
+            <span class="footer-copy">© 2026 SENS-SIG Strategic Ventures | Israel</span>
+        </div>
+        <div class="footer-right">
+            <span class="footer-notice">Your technology. Our relationships. One shared mission.</span>
+            <a href="legal.html" class="footer-legal">Privacy Policy &amp; Terms of Use</a>
+        </div>
+    </footer>
+
+    <script>
+        if (window.self !== window.top) { window.top.location = window.self.location; }
+    </script>
+
+</body>
+</html>
